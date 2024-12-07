@@ -15,10 +15,16 @@
 #  limitations under the License.
 #
 
-from django.shortcuts import render ,HttpResponse
+from django.shortcuts import render, HttpResponse
 
+def login(request) :
+
+    return render(request, "login.html")
 
 def index(request) :
-
-    return render(request, "index.html")
+    user = request.session.get('user')
+    datacontext = { }
+    if user is not None :
+        datacontext = {'username':user['userName']}
+    return render(request, "index.html", context = datacontext)
 

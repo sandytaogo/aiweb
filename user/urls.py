@@ -19,11 +19,12 @@
 from django.urls import path
 from user import views as userViews
 
-
-
 urlpatterns = [
+     path('publickey', userViews.publickey),
+     path('regrist', userViews.regrist),
+     path('login', userViews.login),
+     path('logout', userViews.logout),
 
      path('addUser', userViews.addUser),
-
-
+     path('verifyCodeImage', userViews.verifyCodeImage)
 ]

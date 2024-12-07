@@ -1,9 +1,7 @@
 # Compiled class file
 *.class
 
-*Sm2Util.java
-*Sm2KeyGenerator.java
-*SM2EngineExtend.java
+
 
 # Log file
 *.log
@@ -13,6 +11,8 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+*__pycache__
 
 # Package Files #
 *.jar
