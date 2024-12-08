@@ -61,6 +61,8 @@ pip install cryptography
 
 pip install selenium==4.27.1
 
+pip install ddddocr -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 ### 其他常用命令：
 
    python manage.py createsuperuser

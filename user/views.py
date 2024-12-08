@@ -95,6 +95,8 @@ def login(request) :
     if userAccount[0].password != password:
         return JsonResponse({"code": 300, "msg": "账号或密码错误"})
 
+
+    del request.session['login_verify_code']
     request.session['user'] = {'userName':userAccount[0].user_name, 'userId':userAccount[0].gid}
     request.session.set_expiry(7200)
 
