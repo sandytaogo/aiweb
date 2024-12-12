@@ -41,4 +41,7 @@ urlpatterns = [
     path("", views.index),
 
     path('user/', include('user.urls')),
+
+    path('discern/', include('discern.urls')),
+
 ]

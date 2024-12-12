@@ -40,8 +40,6 @@ def check_code(width=100, height=30, char_length=4, font_file='static/fonts/kumo
     current_directory = os.path.dirname(__file__)
     project_root = os.path.abspath(os.path.join(current_directory, '..', '..'))
     current_directory = project_root.join(font_file)
-    # 打印路径
-    print(f"当前文件所在目录: {project_root}")
     # 写文字
     font = ImageFont.truetype(font_file, font_size)
     for i in range(char_length):

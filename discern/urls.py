@@ -1,5 +1,6 @@
 
 
+
 #  Copyright 2024-2034 the original author or authors.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,16 +16,10 @@
 #  limitations under the License.
 #
 
-from django.shortcuts import render, HttpResponse
+from django.urls import path
+from discern import views as discernViews
 
-def login(request) :
+urlpatterns = [
+     path('voiceToText', discernViews.voiceToText),
 
-    return render(request, "login.html")
-
-def index(request) :
-    user = request.session.get('user')
-    datacontext = None
-    if user is not None :
-        datacontext = {'username':user['userName'], 'gid' : user['userId']}
-    return render(request, "index.html", context = datacontext)
-
+]

@@ -16,10 +16,10 @@ from django.conf import settings
 from django.shortcuts import render ,HttpResponse
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
-
+from django.db import transaction
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
-
+import logging
 from util.codeimg import check_code
 
 from util import sm2util
@@ -32,6 +32,7 @@ from user.models import Security, Account
 
 # 导入会话中间件使用的会话模块
 from django.contrib.sessions.models import Session
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -65,6 +66,7 @@ def verifyCodeImage(request) :
     return response
 
 @csrf_exempt
+@transaction.atomic
 @require_http_methods(["POST"])
 def login(request) :
     userName = request.POST.get("userName")
@@ -99,6 +101,8 @@ def login(request) :
     del request.session['login_verify_code']
     request.session['user'] = {'userName':userAccount[0].user_name, 'userId':userAccount[0].gid}
     request.session.set_expiry(7200)
+
+    logger.info("login user[gid=%s, username=%s]", userAccount[0].gid, userAccount[0].user_name)
 
     return JsonResponse({"code": 200, "msg": "登录成功"})
 

@@ -44,24 +44,27 @@ artificial intelligence (AI), the ability of a digital computer or computer-cont
 ****
 <img src="ai_overview.jpg" width="100%">
 
+### Pytorch 采用
+Pytorch是torch的python版本，是由Facebook开源的神经网络框架，专门针对 GPU 加速的深度神经网络（DNN）编程。Torch 是一个经典的对多维矩阵数据进行操作的张量（tensor ）库，在机器学习和其他数学密集型应用有广泛应用。
+Pytorch的计算图是动态的，可以根据计算需要实时改变计算图。
+由于Torch语言采用 Lua，导致在国内一直很小众，并逐渐被支持 Python 的 Tensorflow 抢走用户。作为经典机器学习库 Torch 的端口，PyTorch 为 Python 语言使用者提供了舒适的写代码选择。
+
+### 智能语音识别
+引入自然语言处理，语音识别模块<br>
+https://github.com/Uberi/speech_recognition
+
 
 ### 环境依赖
-
+ 
 https://pypi.org/
 
-pip install django
-
-pip install mysqlclient
-
-pip install pillow
-
-pip install gmssl
-
-pip install cryptography
-
-pip install selenium==4.27.1
+pip-compile --upgrade requirements.in
 
 pip install ddddocr -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+pip install facenet-pytorch
+
+pip install -r requirements.in
 
 ### 其他常用命令：
 
@@ -95,6 +98,8 @@ https://docs.python.org/zh-cn/3.13/library/gc.html
 https://docs.djangoproject.com/
 
 https://shields.io/
+
+https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/
 
 
 

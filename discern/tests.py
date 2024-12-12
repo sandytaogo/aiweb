@@ -1,5 +1,3 @@
-
-
 #  Copyright 2024-2034 the original author or authors.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +12,22 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
+from django.test import TestCase
 
-from django.shortcuts import render, HttpResponse
+# Create your tests here.
 
-def login(request) :
+import speech_recognition as sr
 
-    return render(request, "login.html")
+def voiceToText() :
+    audio_file = 'F:\\AudioFile\\1733979648519.wav'
 
-def index(request) :
-    user = request.session.get('user')
-    datacontext = None
-    if user is not None :
-        datacontext = {'username':user['userName'], 'gid' : user['userId']}
-    return render(request, "index.html", context = datacontext)
+    r = sr.Recognizer()
 
+    with sr.AudioFile(audio_file) as source:
+        audio = r.record(source)
+
+    print("文本内容", r.recognize_sphinx(audio_data = audio, language="zh_CN"))
+
+
+if __name__ == "__main__" :
+    voiceToText()

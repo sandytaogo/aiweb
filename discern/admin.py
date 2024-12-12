@@ -1,5 +1,3 @@
-
-
 #  Copyright 2024-2034 the original author or authors.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,17 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
+from django.contrib import admin
 
-from django.shortcuts import render, HttpResponse
-
-def login(request) :
-
-    return render(request, "login.html")
-
-def index(request) :
-    user = request.session.get('user')
-    datacontext = None
-    if user is not None :
-        datacontext = {'username':user['userName'], 'gid' : user['userId']}
-    return render(request, "index.html", context = datacontext)
+# Register your models here.
 
