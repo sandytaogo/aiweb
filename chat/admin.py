@@ -12,22 +12,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
-from django.test import TestCase
+from django.contrib import admin
 
-# Create your tests here.
-
-import speech_recognition as sr
-
-def voiceToText() :
-    audio_file = 'F:\\AudioFile\\02.wav'
-
-    r = sr.Recognizer()
-
-    with sr.AudioFile(audio_file) as source:
-        audio = r.record(source)
-
-    print("文本内容", r.recognize_sphinx(audio_data = audio, language="zh_CN"))
-
-
-if __name__ == "__main__" :
-    voiceToText()
+# Register your models here.

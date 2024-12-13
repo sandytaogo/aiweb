@@ -64,7 +64,15 @@ pip install ddddocr -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 pip install facenet-pytorch
 
+pip install torch torchvision torchaudio
+
+pip install transformers
+
 pip install -r requirements.in
+
+pip install --upgrade pip
+
+python.exe -m pip install --upgrade pip
 
 ### 其他常用命令：
 
@@ -101,6 +109,7 @@ https://shields.io/
 
 https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/
 
+https://github.com/ShenDezhou/Chinese-PreTrained-GPT/tree/main
 
-
+https://gitcode.com/mirrors/google-bert/bert-base-chinese/tree/main
 

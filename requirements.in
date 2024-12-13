@@ -8,3 +8,5 @@ selenium==4.27.1
 SpeechRecognition==3.12.0
 PocketSPhinx==5.0.3
 pyaudio==0.2.14
+TensorFlow==2.18.0
+numpy==2.2.0
